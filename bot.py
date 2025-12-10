@@ -1,0 +1,17 @@
+from rubika import Bot, Socket
+
+
+TOKEN = "FCFIH0VAVHKSQIXNYFBMCEEHEKVLSKQPACAWETXSALGIMNLMTMQMTNBFFTSCNQLP"
+
+bot = Bot(TOKEN)
+app = Socket(bot.auth)
+
+@app.handler()
+def handle(msg):
+    text = msg.text
+    chat_id = msg.chat_id
+
+    if text == "/start":
+        msg.reply("سلام نایب! ربات ۲۴ ساعته روشنه 😎🔥")
+
+app.run()
